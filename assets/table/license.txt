@@ -1,0 +1,11 @@
+Model Information:
+* title:	Minecraft - bedside table
+* source:	https://sketchfab.com/3d-models/minecraft-bedside-table-aadecf1629c54703911b7007e5ca9042
+* author:	Alejandro_LG (https://sketchfab.com/Alejandro_LG)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Minecraft - bedside table" (https://sketchfab.com/3d-models/minecraft-bedside-table-aadecf1629c54703911b7007e5ca9042) by Alejandro_LG (https://sketchfab.com/Alejandro_LG) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
