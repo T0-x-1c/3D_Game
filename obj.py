@@ -15,7 +15,7 @@ player.y += 25
 player.scale = 0.85
 player.speed = 4.5
 player.jump_height = 1.5
-player.gravity = 0.5
+player.gravity = 0
 
 camera.fov=origFOV=110
 # camera.position = (0, 0.8, 0)  # Камера на рівні голови
@@ -32,5 +32,5 @@ sky = Sky(texture = 'sky_sunset')
 sun = DirectionalLight(shadows=True)
 sun.look_at(Vec3(1, -1, 1))
 
-world = WorldEdit()
+world = WorldEdit(player = player)
 world.generate_world()

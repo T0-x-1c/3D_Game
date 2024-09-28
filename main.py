@@ -13,6 +13,7 @@ from models import Block
 from obj import player
 
 def update():
+    player.gravity = 0.5
     global sprint
     global stels
 
