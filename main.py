@@ -6,6 +6,7 @@ import os
 
 sprint = False # global boolean
 stels = False
+gravity = False
 
 app = Ursina()
 
@@ -13,7 +14,6 @@ from models import Block
 from obj import player
 
 def update():
-    player.gravity = 0.5
     global sprint
     global stels
 
@@ -33,6 +33,12 @@ def update():
         stels = True
         player.speed = 4.5
         player.scale = 0.85
+
+    if held_keys['g'] and gravity == False:
+        player.gravity = 0.5
+    elif held_keys['g'] and gravity == True:
+        player.gravity = 0
+
         
 Block.id = 0
 

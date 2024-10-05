@@ -16,6 +16,8 @@ player.scale = 0.85
 player.speed = 4.5
 player.jump_height = 1.5
 player.gravity = 0
+player.x = CHUNKSIZE / 2
+player.z = CHUNKSIZE / 2
 
 camera.fov=origFOV=110
 # camera.position = (0, 0.8, 0)  # Камера на рівні голови
