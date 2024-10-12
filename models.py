@@ -125,14 +125,19 @@ class WorldEdit(Entity):
         with open('save.dat', 'wb') as file:
             pickle.dump(game_data, file)
 
+        self.menu.toggle_menu()
+
 
     def generate_world(self):
-            for x in range(WORLDSIZE):
-                for z in range(WORLDSIZE):
-                    chunk_pos = (x,z)
-                    if chunk_pos not in self.chunks:
-                        chunk = Chunk(chunk_pos)
-                        self.chunks[chunk_pos] = chunk
+        self.clear_world()
+        for x in range(WORLDSIZE):
+            for z in range(WORLDSIZE):
+                chunk_pos = (x,z)
+                if chunk_pos not in self.chunks:
+                    chunk = Chunk(chunk_pos)
+                    self.chunks[chunk_pos] = chunk
+
+        self.menu.toggle_menu()
 
     def clear_world(self):
         for chunk in self.chunks.values():
@@ -163,6 +168,8 @@ class WorldEdit(Entity):
             self.clear_world()
             self.load_world(game_data["chunks"], game_data["trees"])
             self.player.x, self.player.y, self.player.z = game_data["player_pos"]
+
+        self.menu.toggle_menu()
 
     def input(self, key):
         if key == 'k':

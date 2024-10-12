@@ -3,6 +3,7 @@ from ursina.prefabs.first_person_controller import *
 from ursina.shaders import lit_with_shadows_shader, unlit_shader, basic_lighting_shader
 from setting import *
 from models import Block, WorldEdit
+from ui import *
 
 player = FirstPersonController() # type: ignore
 player.y += 25
@@ -35,4 +36,8 @@ sun = DirectionalLight(shadows=True)
 sun.look_at(Vec3(1, -1, 1))
 
 world = WorldEdit(player = player)
-world.generate_world()
+# world.generate_world()
+menu = Menu(world)
+menu.toggle_menu()
+mouse.locked = False
+mouse.visible = True

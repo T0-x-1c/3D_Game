@@ -19,15 +19,28 @@ class Menu(Entity):
     def __init__(self, game, **kwargs):
         super().__init__(parent = camera.ui, ignore_paused = True,**kwargs)
 
-        self.bg = Sprite(texture='assets\\background.png', z=1, color=color.white, scale = 1.3)
+        self.bg = Sprite(texture='assets\\background.png', parent=self, z=1, color=color.white, scale = 0.2)
         self.title = Text(text="UrsinaCruft", scale = 4, parent=self, origin = (0,0), x = 0, y = 0.35)
 
         background_music = Audio('bg_music.mp3', volume=0.3, loop=True, autoplay=True)
 
+        game.menu = self
+
+        Menu_Button("New Game", game.generate_world, 0, 0.13, self)
+        Menu_Button("Load Game", game.load_game, 0, 0.0, self)
+        Menu_Button("Save Game", game.save_game, 0, -0.13, self)
         Menu_Button("Quit", application.quit, 0, -0.26, self)
-        Menu_Button("New Game", application.quit, 0, -0.13, self)
-        Menu_Button("Load Game", application.quit, 0, 0, self)
-        Menu_Button("Save Game", application.quit, 0, 0.13, self)
+
+    def toggle_menu(self):
+        application.paused = not application.paused
+        self.enabled =   application.paused
+        self.visible =  self.visible
+        mouse.locked = not mouse.locked
+        mouse.visible = not mouse.visible
+
+    def input(self, key):
+        if key == 'escape':
+            self.game.menu_toggle()
 
 
 if __name__ == "__main__":

@@ -12,6 +12,7 @@ app = Ursina()
 
 from models import Block
 from obj import player
+from ui import Menu
 
 def update():
     global sprint
