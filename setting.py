@@ -4,8 +4,8 @@ from ursina.shaders import lit_with_shadows_shader, unlit_shader, basic_lighting
 
 
 CHUNKSIZE = 5
-WORLDSIZE = 5
-DATAILDISTANCE = 8
+WORLDSIZE = 3
+DATAILDISTANCE = 15
 BASE_DIR = os.getcwd()
 IMG_DIR = os.path.join(BASE_DIR, 'assets/block_texture')
 SHADER = basic_lighting_shader
